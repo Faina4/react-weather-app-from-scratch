@@ -4,6 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+    <div className="container">
      
         <h1> Weather Forecast</h1>
        <footer>
@@ -12,6 +13,7 @@ open-sourced
 </a>
 {""} on GitHub
        </footer>
+    </div>
     </div>
   );
 }
