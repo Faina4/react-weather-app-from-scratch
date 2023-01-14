@@ -1,5 +1,75 @@
-.Weather{
-    border: 1px solid red;
-    border-radius: 10px;
-    margin: 0 auto;
+:root {
+    --primary-color:#c6db22;
+    --secondary-color: #269326;
+    --primary-border-color: #103c10;
+    --secondary-border-color:#decc2c;
+    --primary-background-color: #f5fcc2;
+    --secondary-background-color:  #fbed69;
+    --primary-font-color:#2B1200;
+    --secondary-font-color: #121110;
+    --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+    --box-shadow-light: 0 5px 10px #427681;
+    --text-shadow: 1px 1px 2px rgb(42, 32, 32);
 }
+.Weather{
+    border: 1.5px solid var(--primary-border-color) ;
+    border-radius: 10px;
+    margin: 30px 0 12px 0 ;
+    padding: 5px;
+   font-family:'Lucida Sans';
+   max-width: 1000px;
+   background-color: var(--primary-background-color);
+   color: #2B1200;
+   box-shadow: var(--box-shadow-light);
+}
+.Weather h1{
+color: var( --primary-font-color);
+font-weight: 100;
+line-height: 29px;
+text-shadow: var(--text-shadow);
+
+
+}
+.Weather ul{
+    margin: 0 auto;
+    padding: 10px;
+}
+.Weather li{
+    list-style: none;
+    font-weight: 100;
+    line-height: 19px;
+}
+
+.Weather .main-temp-description, .main-temp{
+
+margin: 10px 0 5px 0;
+padding: 10px;
+line-height: 10px;
+}
+
+.current-city-search{
+    margin: 0 auto;
+    padding: 10px;  
+}
+.current-forecast-description{
+    list-style: none;
+    font-weight: 100;
+    line-height: 19px;
+}
+.form-control{
+    border: 1.5px solid var(--secondary-border-color);
+    box-shadow: var(--box-shadow);
+
+}
+.btn-personal{
+    border: 1.5px solid var(--secondary-border-color);
+    background-color: var( --primary-background-color);
+    box-shadow: var(--box-shadow);
+    text-shadow: var(--text-shadow);
+    font-weight: 100;
+    }
+    .btn-personal:hover{
+        background-color:var(--secondary-background-color);
+        box-shadow: var(--box-shadow);
+        border: 1.5px solid var(--primary-border-color);
+    }
