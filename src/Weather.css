@@ -40,21 +40,29 @@ text-shadow: var(--text-shadow);
     line-height: 19px;
 }
 
-.Weather .main-temp-description, .main-temp{
-
-margin: 10px 0 5px 0;
-padding: 10px;
-line-height: 10px;
+.Weather .temperature{
+font-weight: bold;
+font-size: 40px;
+line-height: 64px;
+vertical-align: middle;
 }
-
-.current-city-search{
+.Weather .units{
+    margin-top: 10px ;
+    line-height: 20px;
+}
+.Weather .current-city-search{
     margin: 0 auto;
     padding: 10px;  
 }
-.current-forecast-description{
+.Weather .current-forecast-description{
+    vertical-align: top;   
     list-style: none;
     font-weight: 100;
-    line-height: 19px;
+
+}
+.Weather .current-icon{
+  align-content: flex-start;
+
 }
 .form-control{
     border: 1.5px solid var(--secondary-border-color);

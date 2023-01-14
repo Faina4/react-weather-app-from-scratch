@@ -28,26 +28,27 @@ export default function Weather(){
                 </form>
              </div>
              </div>
-             <ul>
-                <div className="row">
-                <div className="col-6">
-             <li className="main-temp">  
-                <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="cloudy">
-                </img> 
-                <span className="temperature">Temperature: 8 </span>
+           
+                <div className="row px-1 py-3 m-1 clearfix" >
+                <div className="col-3 p-1 ">
+               <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="cloudy" className="current-icon"  />
+          
+                <span className="temperature "> 8 </span>
                  <span className="units"> °C |°F </span> 
               
-             </li>
+             
                
                 
                 </div>
-                <div className="col-6 main-temp-description align-middle">
-                <li>   Description: cloudy   </li>
+                <div className=" col-6 p-1">
+               <ul className="current-forecast-description mt-3">
+               <li>   Description: cloudy   </li>
                 <li>  Humidity:  </li>
                 <li>  Wind speed:  </li>
+               </ul>
                 </div>
                 </div>
-             </ul>
+            
         </div>
     )
 }
