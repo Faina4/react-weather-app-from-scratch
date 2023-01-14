@@ -40,6 +40,11 @@ text-shadow: var(--text-shadow);
     line-height: 19px;
 }
 
+.Weather img{
+    align-content: flex-start;
+  
+  
+  }
 .Weather .temperature{
 font-weight: bold;
 font-size: 40px;
@@ -47,8 +52,12 @@ line-height: 64px;
 vertical-align: middle;
 }
 .Weather .units{
-    margin-top: 10px ;
-    line-height: 20px;
+    margin-top: 1px ;
+    font-size: 18px;
+ position: relative;
+ top:-6px;
+    line-height: 24px;
+    
 }
 .Weather .current-city-search{
     margin: 0 auto;
@@ -60,10 +69,7 @@ vertical-align: middle;
     font-weight: 100;
 
 }
-.Weather .current-icon{
-  align-content: flex-start;
 
-}
 .form-control{
     border: 1.5px solid var(--secondary-border-color);
     box-shadow: var(--box-shadow);
