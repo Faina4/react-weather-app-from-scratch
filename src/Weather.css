@@ -46,16 +46,17 @@ text-shadow: var(--text-shadow);
   
   }
 .Weather .temperature{
-font-weight: bold;
+
 font-size: 40px;
 line-height: 64px;
 vertical-align: middle;
+text-shadow: var(--text-shadow);
 }
 .Weather .units{
     margin-top: 1px ;
     font-size: 18px;
  position: relative;
- top:-6px;
+ top:-6ccpx;
     line-height: 24px;
     
 }
