@@ -12,7 +12,7 @@ function handleResponse(response){
    console.log(response.data.dt*1000);
    setCurrentForecast({
       ready:true,
-      cityName: response.data.name, 
+      city: response.data.name, 
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
@@ -35,7 +35,7 @@ if (currentForecast.ready){
         <div className="row current-city-search">
            <div className="col-4 p-0">
         <h1 className="my-1 p-0 mb-2">
-          {currentForecast.cityName}
+          {currentForecast.city}
         </h1>
         <CurrentWeekDay date={currentForecast.date} />
         </div>

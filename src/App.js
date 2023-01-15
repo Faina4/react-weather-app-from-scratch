@@ -9,7 +9,7 @@ function App() {
      
   
        
- <Weather defaultCity="Madrid" />
+ <Weather defaultCity="Kyiv" />
 
        <footer>
         This app was coded by Anna Filyakina and is  {""}<a href="https://github.com/Faina4/react-weather-app-from-scratch-hw5">
