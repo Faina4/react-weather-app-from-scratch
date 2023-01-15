@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
 import "./Weather.css";
-import CurrentDate from  "./CurrentDay&Date"
+import CurrentDate from  "./CurrentDate"
 
 
 
@@ -31,7 +31,7 @@ if (currentForecast.ready){
    return(
       <div className="Weather">
       <ul>
-           <li>  <CurrentDate date={currentForecast.currentDate} /></li>
+           <li>  <CurrentDate  /></li>
            <li>  Weekday&time Saturday 00:00 </li>
           
         </ul>  
