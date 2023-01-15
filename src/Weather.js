@@ -73,7 +73,7 @@ if (currentForecast.ready){
    </div>
    )} else{
       const apiKey="d08b5ff65675f4663f3c5d9f116c9748";
-let city="Kyiv";
+
 let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`
 axios.get(apiUrl).then(handleResponse);
 
