@@ -4,8 +4,6 @@ import "./Weather.css";
 import CurrentDate from  "./CurrentDate"
 import CurrentWeekDay from  "./CurrentWeekDay"
 
-
-
 export default function Weather(props){
 //const[ready, setReady]=useState(false);
 const [currentForecast, setCurrentForecast] = useState({ready:false})
