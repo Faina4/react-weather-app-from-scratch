@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Weather.css";
 import CurrentDate from  "./CurrentDate"
 import CurrentWeekDay from  "./CurrentWeekDay"
+import SearchForm from  "./SearchForm"
 
 
 
@@ -43,17 +44,10 @@ if (currentForecast.ready){
         <CurrentWeekDay date={currentForecast.date} />
         </div>
         <div className="col-8">
-           <form className="row">
-          
-           <div className="col-9 pe-1">
-               <input type="search" placeholder="Search a city..." className="form-control" autoFocus="on">
-               </input> </div>
-                <div className="col-3 ps-1">
-               <input type="submit" value="Search" className="btn btn-personal w-100">
-               </input>
-               </div>
-              
-           </form>
+       
+               <SearchForm />
+       
+      
         </div>
         </div>
       
