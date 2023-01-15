@@ -3,8 +3,6 @@ import axios from "axios";
 import "./Weather.css";
 import CurrentDate from  "./CurrentDate"
 import CurrentWeekDay from  "./CurrentWeekDay"
-import SearchForm from  "./SearchForm"
-
 
 
 
@@ -23,10 +21,10 @@ function handleResponse(response){
       wind: response.data.wind.speed,
       iconUrl: "https://openweathermap.org/img/wn/04d@2x.png",
       date: new Date(response.data.dt*1000),
-    
-   })
-   
-  // setReady(true);
+       })
+     // setReady(true);
+     //onSubmit={handleSubmit}
+     //  onChange={handleCityChange}
 ;}
 
 if (currentForecast.ready){
@@ -45,7 +43,17 @@ if (currentForecast.ready){
         </div>
         <div className="col-8">
        
-               <SearchForm />
+        <form className="row" >
+          <div className="col-9 pe-1">
+              <input type="search" placeholder="Search a city..." className="form-control" autoFocus="on"
+            >
+              </input> 
+          </div>
+           <div className="col-3 ps-1">
+              <input type="submit" value="Search" className="btn btn-personal w-100">
+              </input>
+          </div>           
+          </form>
        
       
         </div>
