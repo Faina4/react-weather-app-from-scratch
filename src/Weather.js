@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import axios from "axios";
 import "./Weather.css";
 import CurrentDate from  "./CurrentDate"
+import CurrentWeekDay from  "./CurrentWeekDay"
 
 
 
@@ -11,7 +12,7 @@ export default function Weather(props){
 const [currentForecast, setCurrentForecast] = useState({ready:false})
 
 function handleResponse(response){
-   console.log(response.data);
+   console.log(response.data.dt*1000);
    setCurrentForecast({
       ready:true,
       cityName: response.data.name, 
@@ -20,8 +21,8 @@ function handleResponse(response){
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       iconUrl: "https://openweathermap.org/img/wn/04d@2x.png",
-      currentDate: new Date (response.data.dt*1000),
-      
+      date: new Date(response.data.dt*1000),
+    
    })
    
   // setReady(true);
@@ -31,15 +32,15 @@ if (currentForecast.ready){
    return(
       <div className="Weather">
       <ul>
-           <li>  <CurrentDate  /></li>
-           <li>  Weekday&time Saturday 00:00 </li>
+        <li>  <CurrentDate date={currentForecast.date} /> </li>        
           
         </ul>  
         <div className="row current-city-search">
            <div className="col-4 p-0">
-        <h1 className="my-1 p-0">
+        <h1 className="my-1 p-0 mb-2">
           {currentForecast.cityName}
         </h1>
+        <CurrentWeekDay date={currentForecast.date} />
         </div>
         <div className="col-8">
            <form className="row">
