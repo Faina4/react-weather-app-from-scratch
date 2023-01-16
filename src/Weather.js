@@ -18,7 +18,7 @@ function handleResponse(response){
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
-      iconUrl: "https://openweathermap.org/img/wn/04d@2x.png",
+      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       date: new Date(response.data.dt*1000),
        })
      // setReady(true);
@@ -29,7 +29,7 @@ function search(){
    const apiKey="d08b5ff65675f4663f3c5d9f116c9748";
    let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
    axios.get(apiUrl).then(handleResponse);
-   
+   //https://api.openweathermap.org/data/2.5/weather?q=London&appid=d08b5ff65675f4663f3c5d9f116c9748&units=metric
 }
 
 
