@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Weather.css";
 import CurrentDate from  "./CurrentDate"
 import CurrentWeekDay from  "./CurrentWeekDay"
+import CurrentTemperature from  "./CurrentTemperature"
 
 export default function Weather(props){
 //const[ready, setReady]=useState(false);
@@ -14,7 +15,7 @@ function handleResponse(response){
    setCurrentForecast({
       ready:true,
       city: response.data.name, 
-      temperature: response.data.main.temp,
+      temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
@@ -73,14 +74,13 @@ if (currentForecast.ready){
         </div>
       
            <div className="row px-1 py-3 m-1 clearfix" >
-           <div className="col-3 p-1 ">
-          <img src= {currentForecast.iconUrl} alt={currentForecast.description} className="current-icon"  />
-     
-           <span className="temperature "> {Math.round(currentForecast.temperature)} </span>
-            <span className="units"> °C |°F </span>         
+           <div className="col-4 p-1 ">
+          <img src= {currentForecast.iconUrl} alt={currentForecast.description} className="current-icon"   />
+     <CurrentTemperature celsius={currentForecast.temperature} />
+           
            
            </div>
-           <div className=" col-6 p-1">
+           <div className=" col-5 p-1">
           <ul className="current-forecast-description mt-3">
           <li className="text-capitalize">   Description: {currentForecast.description}   </li>
            <li>  Humidity: {currentForecast.humidity} % </li>

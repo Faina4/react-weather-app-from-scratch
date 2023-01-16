@@ -42,24 +42,11 @@ text-shadow: var(--text-shadow);
 
 .Weather img{
     align-content: flex-start;
+align-items: flex-start;
   
   
   }
-.Weather .temperature{
 
-font-size: 40px;
-line-height: 64px;
-vertical-align: middle;
-text-shadow: var(--text-shadow);
-}
-.Weather .units{
-    margin-top: 1px ;
-    font-size: 18px;
- position: relative;
- top:-6ccpx;
-    line-height: 24px;
-    
-}
 .Weather .current-city-search{
     margin: 0 auto;
     padding: 10px;  
