@@ -11,6 +11,8 @@
      position: relative;
      top:-6ccpx;
         line-height: 24px;
-       
-        
+              
+    }
+    .CurrentTemperature a{
+        text-decoration: none;
     }
