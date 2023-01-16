@@ -7,6 +7,7 @@ import CurrentWeekDay from  "./CurrentWeekDay"
 export default function Weather(props){
 //const[ready, setReady]=useState(false);
 const [currentForecast, setCurrentForecast] = useState({ready:false})
+const[city, setCity] = useState(props.defaultCity)
 
 function handleResponse(response){
    console.log(response.data.dt*1000);
@@ -24,7 +25,21 @@ function handleResponse(response){
      //onSubmit={handleSubmit}
      //  onChange={handleCityChange}
 ;}
+function search(){
+   const apiKey="d08b5ff65675f4663f3c5d9f116c9748";
+   let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+   axios.get(apiUrl).then(handleResponse);
+   
+}
 
+
+function handleSubmit(event){
+   event.preventDefault();
+   search() 
+}
+function handleCityChange(event){
+ setCity(event.target.value)
+}
 if (currentForecast.ready){
    return(
       <div className="Weather">
@@ -41,9 +56,9 @@ if (currentForecast.ready){
         </div>
         <div className="col-8">
        
-        <form className="row" >
+        <form className="row" onSubmit={handleSubmit}>
           <div className="col-9 pe-1">
-              <input type="search" placeholder="Search a city..." className="form-control" autoFocus="on"
+              <input type="search" placeholder="Search a city..." className="form-control" autoFocus="on" onChange={handleCityChange}
             >
               </input> 
           </div>
@@ -76,11 +91,7 @@ if (currentForecast.ready){
        
    </div>
    )} else{
-      const apiKey="d08b5ff65675f4663f3c5d9f116c9748";
-
-let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`
-axios.get(apiUrl).then(handleResponse);
-
+     search();
     return "Loading ..."
    }
 }
