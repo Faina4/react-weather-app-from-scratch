@@ -7,9 +7,12 @@ export default function WeatherDailyForecast(){
         <div className="WeatherDailyForecast mx-1">
         <div className="row">
         <div className="col">
-           Monday
-           <WeatherIcon    />
-           19 10
+        <div className="DailyForecast-day">  Mon </div>
+         <WeatherIcon  code={"50d"} size={32} />
+         <div>
+         <span className="DailyForecastTemp-max">  19° </span> 
+          <span className="DailyForecastTemp-min">  10°</span>  
+         </div>
         </div>
        
         </div>
