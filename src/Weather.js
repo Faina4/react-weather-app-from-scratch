@@ -5,6 +5,7 @@ import CurrentDate from  "./CurrentDate"
 import CurrentWeekDay from  "./CurrentWeekDay"
 import CurrentTemperature from  "./CurrentTemperature"
 import WeatherIcon from  "./WeatherIcon"
+import { icon } from "@fortawesome/fontawesome-svg-core";
 
 export default function Weather(props){
 //const[ready, setReady]=useState(false);
@@ -12,7 +13,7 @@ const [currentForecast, setCurrentForecast] = useState({ready:false})
 const[city, setCity] = useState(props.defaultCity)
 
 function handleResponse(response){
-   console.log(response.data.weather[0].icon);
+   console.log(response.data.weather[0]);
    setCurrentForecast({
       ready:true,
       city: response.data.name, 
@@ -20,7 +21,8 @@ function handleResponse(response){
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
-      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      
       date: new Date(response.data.dt*1000),
        })
      // setReady(true);
@@ -78,7 +80,7 @@ if (currentForecast.ready){
            <div className="row px-1 py-3 m-1 clearfix" >
            <div className="col-4 p-1 float-left">
             <span>
-            <WeatherIcon code={currentForecast.iconUrl}  size={52} />
+            <WeatherIcon code={currentForecast.icon}  size={82} />
           
              <CurrentTemperature celsius={currentForecast.temperature} />
                       
