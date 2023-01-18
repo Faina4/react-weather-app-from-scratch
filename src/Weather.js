@@ -5,7 +5,8 @@ import CurrentDate from  "./CurrentDate"
 import CurrentWeekDay from  "./CurrentWeekDay"
 import CurrentTemperature from  "./CurrentTemperature"
 import WeatherIcon from  "./WeatherIcon"
-import { icon } from "@fortawesome/fontawesome-svg-core";
+import WeatherDailyForecast from  "./WeatherDailyForecast"
+//import { icon } from "@fortawesome/fontawesome-svg-core";
 
 export default function Weather(props){
 //const[ready, setReady]=useState(false);
@@ -21,8 +22,8 @@ function handleResponse(response){
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
-      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
-      
+      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       date: new Date(response.data.dt*1000),
        })
      // setReady(true);
@@ -81,7 +82,7 @@ if (currentForecast.ready){
            <div className="col-4 p-1 float-left">
             <span>
             <WeatherIcon code={currentForecast.icon}  size={82} />
-          
+    
              <CurrentTemperature celsius={currentForecast.temperature} />
                       
              </span>
@@ -94,7 +95,7 @@ if (currentForecast.ready){
           </ul>
            </div>
            </div>
-       
+       <WeatherDailyForecast />
    </div>
    )} else{
      search();
