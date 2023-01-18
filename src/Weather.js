@@ -78,7 +78,7 @@ if (currentForecast.ready){
            <div className="row px-1 py-3 m-1 clearfix" >
            <div className="col-4 p-1 float-left">
             <span>
-            <WeatherIcon icon={currentForecast.iconUrl}  size={52} />
+            <WeatherIcon code={currentForecast.iconUrl}  size={52} />
           
              <CurrentTemperature celsius={currentForecast.temperature} />
                       
