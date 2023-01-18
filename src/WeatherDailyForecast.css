@@ -1,0 +1,10 @@
+.WeatherDailyForecast{
+    border: 1.5px solid var(--primary-border-color) ;
+    border-radius: 10px;
+    margin: 30px 0 12px 0 ;
+    padding: 5px;
+  
+   background-color: var(--primary-background-color);
+   color: #2B1200;
+   box-shadow: var(--box-shadow-light);
+}

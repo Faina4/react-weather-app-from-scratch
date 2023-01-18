@@ -12,7 +12,7 @@ const [currentForecast, setCurrentForecast] = useState({ready:false})
 const[city, setCity] = useState(props.defaultCity)
 
 function handleResponse(response){
-   console.log(response.data.dt*1000);
+   console.log(response.data.weather[0].icon);
    setCurrentForecast({
       ready:true,
       city: response.data.name, 
