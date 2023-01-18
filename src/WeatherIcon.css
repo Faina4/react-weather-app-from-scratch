@@ -1,0 +1,10 @@
+
+.WeatherIcon canvas {
+align-content: flex-start;
+align-items: flex-start;
+size: 36px;
+line-height: 64px;
+vertical-align: middle;
+text-shadow: var(--text-shadow);
+  
+  }

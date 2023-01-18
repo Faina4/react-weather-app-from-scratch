@@ -4,6 +4,7 @@ import "./Weather.css";
 import CurrentDate from  "./CurrentDate"
 import CurrentWeekDay from  "./CurrentWeekDay"
 import CurrentTemperature from  "./CurrentTemperature"
+import WeatherIcon from  "./WeatherIcon"
 
 export default function Weather(props){
 //const[ready, setReady]=useState(false);
@@ -25,6 +26,7 @@ function handleResponse(response){
      // setReady(true);
      //onSubmit={handleSubmit}
      //  onChange={handleCityChange}
+     //<img src= {currentForecast.iconUrl} alt={currentForecast.description} className="current-icon"   />
 ;}
 function search(){
    const apiKey="d08b5ff65675f4663f3c5d9f116c9748";
@@ -74,11 +76,13 @@ if (currentForecast.ready){
         </div>
       
            <div className="row px-1 py-3 m-1 clearfix" >
-           <div className="col-4 p-1 ">
-          <img src= {currentForecast.iconUrl} alt={currentForecast.description} className="current-icon"   />
-     <CurrentTemperature celsius={currentForecast.temperature} />
-           
-           
+           <div className="col-4 p-1 float-left">
+            <span>
+            <WeatherIcon icon={currentForecast.iconUrl}  size={52} />
+          
+             <CurrentTemperature celsius={currentForecast.temperature} />
+                      
+             </span>
            </div>
            <div className=" col-5 p-1">
           <ul className="current-forecast-description mt-3">
