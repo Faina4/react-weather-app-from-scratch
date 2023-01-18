@@ -4,6 +4,7 @@ import "./Weather.css";
 import CurrentDate from  "./CurrentDate"
 import CurrentWeekDay from  "./CurrentWeekDay"
 import CurrentTemperature from  "./CurrentTemperature"
+import WeatherDailyForecast from'./WeatherDailyForecast';
 
 export default function Weather(props){
 //const[ready, setReady]=useState(false);
@@ -88,7 +89,7 @@ if (currentForecast.ready){
           </ul>
            </div>
            </div>
-       
+           <WeatherDailyForecast  />
    </div>
    )} else{
      search();
