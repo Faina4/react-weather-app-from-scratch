@@ -14,9 +14,10 @@ const [currentForecast, setCurrentForecast] = useState({ready:false})
 const[city, setCity] = useState(props.defaultCity)
 
 function handleResponse(response){
-   console.log(response.data.weather[0]);
+// console.log(response.data.coord);
    setCurrentForecast({
       ready:true,
+      coordinates: response.data.coord, 
       city: response.data.name, 
       temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].description,
@@ -95,7 +96,8 @@ if (currentForecast.ready){
           </ul>
            </div>
            </div>
-       <WeatherDailyForecast />
+       <WeatherDailyForecast coordinates={currentForecast.coordinates} />
+   
    </div>
    )} else{
      search();
