@@ -10,7 +10,7 @@ function App() {
      <Weather defaultCity="Kyiv" />
     
            <footer>
- This app was coded by FaIna and is on{""}<a href="https://github.com/Faina4/react-weather-app-from-scratch-hw5/tree/weather-info" rel="noreferrer" target="_blank"> GitHub </a>
+ This app was coded by FaIna and is on{""}<a href="https://github.com/Faina4/react-weather-app-from-scratch-hw5" rel="noreferrer" target="_blank"> GitHub </a>
      
            </footer>
        </div>
