@@ -7,7 +7,6 @@ export default function WeatherDailyForecast(props){
 
 function handleResponse(response){
 console.log(response.data)
-
 }
 
 let longitude = props.coordinates.lon;
