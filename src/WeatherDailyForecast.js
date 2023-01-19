@@ -20,15 +20,11 @@ if(loaded){
 {dailyForecastData.map(function(dailyForecast, index){
     return(
            <div className="col OneDay" key={index}>
-            {index}
+
    <WeatherForecastDay dailyData={dailyForecast} />
 </div>
     )
-})}
-
- 
-  
-   
+})}   
     </div>
     </div>
    )
