@@ -18,13 +18,14 @@ if(loaded){
     <div className="WeatherDailyForecast mx-2">
     <div className="row">
 {dailyForecastData.map(function(dailyForecast, index){
-    return(
+    if(index < 6){
+           return(
            <div className="col OneDay" key={index}>
 
    <WeatherForecastDay dailyData={dailyForecast} />
 </div>
-    )
-})}   
+    )}
+ })}   
     </div>
     </div>
    )
