@@ -23,8 +23,27 @@ if(loaded){
 
    <WeatherForecastDay dailyData={dailyForecast} />
 </div>
+<<<<<<< HEAD
     )
 })}   
+=======
+    <div className="col OneDay">
+   <WeatherForecastDay dailyData={dailyForecastData[1]} />
+</div>
+    <div className="col OneDay">
+   <WeatherForecastDay dailyData={dailyForecastData[2]} />
+</div>
+    <div className="col OneDay">
+   <WeatherForecastDay dailyData={dailyForecastData[3]} />
+</div>
+    <div className="col OneDay">
+   <WeatherForecastDay dailyData={dailyForecastData[4]} />
+</div>
+    <div className="col OneDay">
+   <WeatherForecastDay dailyData={dailyForecastData[5]} />
+</div>
+   
+>>>>>>> 2d01f69c09dba4e936fea6c958b7010cf87a9635
     </div>
     </div>
    )
