@@ -4,6 +4,9 @@ import "./Weather.css";
 import CurrentDate from  "./CurrentDate"
 import CurrentWeekDay from  "./CurrentWeekDay"
 import CurrentTemperature from  "./CurrentTemperature"
+import WeatherIcon from  "./WeatherIcon"
+import WeatherDailyForecast from  "./WeatherDailyForecast"
+//import { icon } from "@fortawesome/fontawesome-svg-core";
 
 export default function Weather(props){
 //const[ready, setReady]=useState(false);
@@ -11,7 +14,7 @@ const [currentForecast, setCurrentForecast] = useState({ready:false})
 const[city, setCity] = useState(props.defaultCity)
 
 function handleResponse(response){
-   console.log(response.data.dt*1000);
+   console.log(response.data.weather[0]);
    setCurrentForecast({
       ready:true,
       city: response.data.name, 
@@ -20,11 +23,13 @@ function handleResponse(response){
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       date: new Date(response.data.dt*1000),
        })
      // setReady(true);
      //onSubmit={handleSubmit}
      //  onChange={handleCityChange}
+     //<img src= {currentForecast.iconUrl} alt={currentForecast.description} className="current-icon"   />
 ;}
 function search(){
    const apiKey="d08b5ff65675f4663f3c5d9f116c9748";
@@ -74,11 +79,13 @@ if (currentForecast.ready){
         </div>
       
            <div className="row px-1 py-3 m-1 clearfix" >
-           <div className="col-4 p-1 ">
-          <img src= {currentForecast.iconUrl} alt={currentForecast.description} className="current-icon"   />
-     <CurrentTemperature celsius={currentForecast.temperature} />
-           
-           
+           <div className="col-4 p-1 float-left">
+            <span>
+            <WeatherIcon code={currentForecast.icon}  size={82} />
+    
+             <CurrentTemperature celsius={currentForecast.temperature} />
+                      
+             </span>
            </div>
            <div className=" col-5 p-1">
           <ul className="current-forecast-description mt-3">
@@ -88,7 +95,7 @@ if (currentForecast.ready){
           </ul>
            </div>
            </div>
-       
+       <WeatherDailyForecast />
    </div>
    )} else{
      search();
