@@ -23,7 +23,7 @@ export default function WeatherIcon(props){
     "50d": "FOG",
  
   }
-  console.log(props.code)  
+  //console.log(props.code)  
       return (      
        
   <span className="WeatherIcon"> 
