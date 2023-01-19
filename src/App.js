@@ -6,19 +6,15 @@ function App() {
   return (
     <div className="App">
     <div className="container">
+          
+     <Weather defaultCity="Kyiv" />
+    
+           <footer>
+ This app was coded by FaIna and is on{""}<a href="https://github.com/Faina4/react-weather-app-from-scratch-hw5/tree/weather-info" rel="noreferrer" target="_blank"> GitHub </a>
      
-  
-       
- <Weather defaultCity="Kyiv" />
-
-       <footer>
-        This app was coded by FaIna and is {""}<a href="https://github.com/Faina4/react-weather-app-from-scratch-hw5/tree/weather-info" rel="noreferrer" target="_blank">
-open-sourced
-</a>
-{""} on GitHub
-       </footer>
-    </div>
-    </div>
+           </footer>
+       </div>
+       </div>
   );
 }
 
