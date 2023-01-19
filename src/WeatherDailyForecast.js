@@ -20,6 +20,21 @@ if(loaded){
     <div className="col OneDay">
    <WeatherForecastDay dailyData={dailyForecastData[0]} />
 </div>
+    <div className="col OneDay">
+   <WeatherForecastDay dailyData={dailyForecastData[1]} />
+</div>
+    <div className="col OneDay">
+   <WeatherForecastDay dailyData={dailyForecastData[2]} />
+</div>
+    <div className="col OneDay">
+   <WeatherForecastDay dailyData={dailyForecastData[3]} />
+</div>
+    <div className="col OneDay">
+   <WeatherForecastDay dailyData={dailyForecastData[4]} />
+</div>
+    <div className="col OneDay">
+   <WeatherForecastDay dailyData={dailyForecastData[5]} />
+</div>
    
     </div>
     </div>
