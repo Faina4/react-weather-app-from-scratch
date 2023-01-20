@@ -1,4 +1,4 @@
-.WeatherDailyForecast{
+.WeatherForecastDay{
     border: 1.5px solid var(--primary-border-color) ;
     border-radius: 10px;
     margin: 30px 0 12px 0 ;
@@ -8,9 +8,12 @@
    color: #2B1200;
    box-shadow: var(--box-shadow-light);
 }
-.WeatherDailyForecast  .OneDay{
-    margin: 5px;
-    padding: 5px;
-    text-align: center ;
-    border: red
-}
+
+
+.WeatherForecastDay .DailyForecastTemp-max{
+    font-weight: bold;
+    }
+    .WeatherForecastDay .DailyForecastTemp-min{
+    text-align: center;
+    opacity: 0.9;
+    }
