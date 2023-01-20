@@ -1,38 +1,49 @@
-import React from "react";
+import React, { useState , useEffect} from "react";
 import "./WeatherDailyForecast.css";
-import WeatherIcon from "./WeatherIcon";
+import WeatherForecastDay from "./WeatherForecastDay";
 import axios from "axios";
 
 export default function WeatherDailyForecast(props){
+let [loaded, setLoaded] = useState(false);
+let [dailyForecastData, setDailyForecastData] = useState(null);
+
+useEffect(()=>{
+setLoaded(false)
+}, [props.coordinates]
+)
 
 function handleResponse(response){
 console.log(response.data)
+setDailyForecastData(response.data.daily)
+setLoaded(true);
 }
 
+if(loaded){
+   return(
+    <div className="WeatherDailyForecast mx-2">
+    <div className="row">
+{dailyForecastData.map(function(dailyForecast, index){
+    if(index < 5){
+           return(
+           <div className="col OneDay" key={index}>
+   <WeatherForecastDay dailyData={dailyForecast} />
+</div>
+    );
+}else{
+    return null;
+}
+ })}   
+    </div>
+    </div>
+   )
+}else{
 let longitude = props.coordinates.lon;
 let latitude = props.coordinates.lat;
-//let apiKey="743bee57fddbfaf52447193a87d5dd25";
-//let units = "metric";
-//let apiUrl=`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=${units}&appid=${apiKey}`
-//let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`
-let apiUrl=`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=743bee57fddbfaf52447193a87d5dd25&units=metric`
-//`https://api.openweathermap.org/data/3.0/onecall?` --- !!! not weather!!
+let apiUrl=`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=743bee57fddbfaf52447193a87d5dd25&units=metric`
+//let apiUrl=`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=743bee57fddbfaf52447193a87d5dd25&units=metric`
 axios.get(apiUrl).then(handleResponse);
-//
+    return null;
+}
 
-    return (
-        <div className="WeatherDailyForecast mx-1">
-        <div className="row">
-        <div className="col">
-        <div className="DailyForecast-day">  Mon </div>
-         <WeatherIcon  code={"50d"} size={32} />
-         <div>
-         <span className="DailyForecastTemp-max">  19° </span> 
-          <span className="DailyForecastTemp-min">  10°</span>  
-         </div>
-        </div>
-       
-        </div>
-        </div>
-    )
+
 }
