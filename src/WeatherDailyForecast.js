@@ -10,11 +10,7 @@ let [dailyForecastData, setDailyForecastData] = useState(null);
 useEffect(()=>{
 setLoaded(false)
 }, [props.coordinates]
-
 )
-
-
-
 
 function handleResponse(response){
 console.log(response.data)
@@ -30,10 +26,12 @@ if(loaded){
     if(index < 5){
            return(
            <div className="col OneDay" key={index}>
-
    <WeatherForecastDay dailyData={dailyForecast} />
 </div>
-    )}
+    );
+}else{
+    return null;
+}
  })}   
     </div>
     </div>
