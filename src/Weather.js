@@ -52,6 +52,7 @@ if (currentForecast.ready){
       <div className="Weather">
       <ul>
         <li>  <CurrentDate date={currentForecast.date} /> </li>        
+        <li>   <CurrentWeekDay date={currentForecast.date} /> </li>        
           
         </ul>  
         <div className="row current-city-search">
@@ -59,7 +60,7 @@ if (currentForecast.ready){
         <h1 className="my-1 p-0 mb-2">
           {currentForecast.city}
         </h1>
-        <CurrentWeekDay date={currentForecast.date} />
+       
         </div>
         <div className="col-8">
        
